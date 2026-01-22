@@ -61,6 +61,7 @@ extension Equation.`Protocol` where Self: ~Copyable {
     ///   - lhs: The left-hand side value.
     ///   - rhs: The right-hand side value.
     /// - Returns: `true` if `lhs` is not equal to `rhs`.
+    @_disfavoredOverload
     @inlinable
     public static func != (lhs: borrowing Self, rhs: borrowing Self) -> Bool {
         !(lhs == rhs)
