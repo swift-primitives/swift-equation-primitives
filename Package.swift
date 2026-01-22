@@ -3,7 +3,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "swift-event-primitives",
+    name: "swift-equation-primitives",
     platforms: [
         .macOS(.v26),
         .iOS(.v26),
@@ -13,22 +13,18 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "Event Primitives",
-            targets: ["Event Primitives"]
+            name: "Equation Primitives",
+            targets: ["Equation Primitives"]
         ),
     ],
     dependencies: [
-        .package(path: "../swift-identity-primitives"),
-        .package(path: "../swift-time-primitives"),
-        .package(path: "../swift-effect-primitives"),
+        .package(path: "../swift-property-primitives"),
     ],
     targets: [
         .target(
-            name: "Event Primitives",
+            name: "Equation Primitives",
             dependencies: [
-                .product(name: "Identity Primitives", package: "swift-identity-primitives"),
-                .product(name: "Time Primitives", package: "swift-time-primitives"),
-                .product(name: "Effect Primitives", package: "swift-effect-primitives"),
+                .product(name: "Property Primitives", package: "swift-property-primitives"),
             ]
         ),
     ],
