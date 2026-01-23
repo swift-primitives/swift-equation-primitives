@@ -14,6 +14,7 @@ extension Dictionary: Equation.`Protocol` where Key: Equation.`Protocol` & Copya
     ///   - rhs: The right-hand side value.
     /// - Returns: `true` if `lhs` is equal to `rhs`.
     @inlinable
+    @_disfavoredOverload
     public static func == (lhs: borrowing Self, rhs: borrowing Self) -> Bool {
         let lhsCopy = copy lhs
         let rhsCopy = copy rhs

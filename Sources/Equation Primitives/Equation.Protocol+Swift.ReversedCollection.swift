@@ -1,11 +1,11 @@
-// Equation.Protocol+Swift.ContiguousArray.swift
-// Conditional conformance for ContiguousArray.
+// Equation.Protocol+Swift.ReversedCollection.swift
+// Conditional conformance for ReversedCollection.
 
-extension ContiguousArray: Equation.`Protocol` where Element: Equation.`Protocol` {
-    /// Returns whether two contiguous arrays are equal.
+extension ReversedCollection: Equation.`Protocol` where Base.Element: Equation.`Protocol` {
+    /// Returns whether two reversed collections are equal.
     ///
-    /// Two arrays are equal if they have the same count and all corresponding
-    /// elements are equal.
+    /// Two reversed collections are equal if they have the same count and all
+    /// corresponding elements are equal.
     ///
     /// - Parameters:
     ///   - lhs: The left-hand side value.

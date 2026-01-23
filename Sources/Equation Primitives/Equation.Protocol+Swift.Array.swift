@@ -12,6 +12,7 @@ extension Array: Equation.`Protocol` where Element: Equation.`Protocol` {
     ///   - rhs: The right-hand side value.
     /// - Returns: `true` if `lhs` is equal to `rhs`.
     @inlinable
+    @_disfavoredOverload
     public static func == (lhs: borrowing Self, rhs: borrowing Self) -> Bool {
         guard lhs.count == rhs.count else { return false }
         for (l, r) in zip(lhs, rhs) {
