@@ -12,8 +12,8 @@ extension Range: Equation.`Protocol` where Bound: Equation.`Protocol` & Copyable
     ///   - lhs: The left-hand side value.
     ///   - rhs: The right-hand side value.
     /// - Returns: `true` if `lhs` is equal to `rhs`.
-    @_disfavoredOverload
     @inlinable
+    @_disfavoredOverload
     public static func == (lhs: borrowing Self, rhs: borrowing Self) -> Bool {
         let lhsCopy = copy lhs
         let rhsCopy = copy rhs
@@ -32,8 +32,8 @@ extension ClosedRange: Equation.`Protocol` where Bound: Equation.`Protocol` & Co
     ///   - lhs: The left-hand side value.
     ///   - rhs: The right-hand side value.
     /// - Returns: `true` if `lhs` is equal to `rhs`.
-    @_disfavoredOverload
     @inlinable
+    @_disfavoredOverload
     public static func == (lhs: borrowing Self, rhs: borrowing Self) -> Bool {
         let lhsCopy = copy lhs
         let rhsCopy = copy rhs

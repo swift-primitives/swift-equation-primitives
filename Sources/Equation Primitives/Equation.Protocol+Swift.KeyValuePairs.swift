@@ -1,7 +1,7 @@
 // Equation.Protocol+Swift.KeyValuePairs.swift
 // Conditional conformance for KeyValuePairs.
 
-extension KeyValuePairs: Equation.`Protocol` where Key: Equation.`Protocol`, Value: Equation.`Protocol` {
+extension KeyValuePairs: Equation.`Protocol` where Key: Equation.`Protocol` & Copyable, Value: Equation.`Protocol` & Copyable {
     /// Returns whether two key-value pairs collections are equal.
     ///
     /// Two KeyValuePairs are equal if they have the same count and all

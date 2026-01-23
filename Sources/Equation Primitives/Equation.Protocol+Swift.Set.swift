@@ -6,6 +6,10 @@ extension Set: Equation.`Protocol` where Element: Equation.`Protocol` & Copyable
     ///
     /// Two sets are equal if they contain the same elements.
     ///
+    /// - Important: This implementation uses stdlib `Set.contains(_:)`,
+    ///   which relies on `Swift.Hashable`/`Swift.Equatable`. For correctness,
+    ///   `Equation.Protocol.==` must be coherent with `Swift.Equatable.==` for `Element`.
+    ///
     /// - Note: Uses `copy` to enable iteration on borrowed values.
     ///
     /// - Parameters:

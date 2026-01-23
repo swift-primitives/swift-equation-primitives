@@ -7,6 +7,10 @@ extension Dictionary: Equation.`Protocol` where Key: Equation.`Protocol` & Copya
     /// Two dictionaries are equal if they have the same keys and each key
     /// maps to equal values in both dictionaries.
     ///
+    /// - Important: This implementation uses stdlib `Dictionary` subscript lookup,
+    ///   which relies on `Swift.Hashable`/`Swift.Equatable`. For correctness,
+    ///   `Equation.Protocol.==` must be coherent with `Swift.Equatable.==` for `Key`.
+    ///
     /// - Note: Uses `copy` to enable iteration on borrowed values.
     ///
     /// - Parameters:

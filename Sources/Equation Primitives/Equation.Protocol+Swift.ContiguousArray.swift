@@ -1,7 +1,7 @@
 // Equation.Protocol+Swift.ContiguousArray.swift
 // Conditional conformance for ContiguousArray.
 
-extension ContiguousArray: Equation.`Protocol` where Element: Equation.`Protocol` {
+extension ContiguousArray: Equation.`Protocol` where Element: Equation.`Protocol` & Copyable {
     /// Returns whether two contiguous arrays are equal.
     ///
     /// Two arrays are equal if they have the same count and all corresponding

@@ -1,7 +1,7 @@
 // Equation.Protocol+Swift.Array.swift
 // Conditional conformance for Array.
 
-extension Array: Equation.`Protocol` where Element: Equation.`Protocol` {
+extension Array: Equation.`Protocol` where Element: Equation.`Protocol` & Copyable {
     /// Returns whether two arrays are equal.
     ///
     /// Two arrays are equal if they have the same count and all corresponding

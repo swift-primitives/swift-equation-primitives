@@ -1,7 +1,7 @@
 // Equation.Protocol+Swift.CollectionOfOne.swift
 // Conditional conformance for CollectionOfOne.
 
-extension CollectionOfOne: Equation.`Protocol` where Element: Equation.`Protocol` {
+extension CollectionOfOne: Equation.`Protocol` where Element: Equation.`Protocol` & Copyable {
     /// Returns whether two single-element collections are equal.
     ///
     /// - Parameters:

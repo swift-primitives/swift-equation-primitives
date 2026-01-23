@@ -1,7 +1,7 @@
 // Equation.Protocol+Swift.ArraySlice.swift
 // Conditional conformance for ArraySlice.
 
-extension ArraySlice: Equation.`Protocol` where Element: Equation.`Protocol` {
+extension ArraySlice: Equation.`Protocol` where Element: Equation.`Protocol` & Copyable {
     /// Returns whether two array slices are equal.
     ///
     /// Two slices are equal if they have the same count and all corresponding

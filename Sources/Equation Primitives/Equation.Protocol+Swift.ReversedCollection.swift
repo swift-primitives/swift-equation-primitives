@@ -1,7 +1,7 @@
 // Equation.Protocol+Swift.ReversedCollection.swift
 // Conditional conformance for ReversedCollection.
 
-extension ReversedCollection: Equation.`Protocol` where Base.Element: Equation.`Protocol` {
+extension ReversedCollection: Equation.`Protocol` where Base.Element: Equation.`Protocol` & Copyable {
     /// Returns whether two reversed collections are equal.
     ///
     /// Two reversed collections are equal if they have the same count and all
