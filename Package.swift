@@ -25,8 +25,21 @@ let package = Package(
         .target(
             name: "Equation Primitives",
             dependencies: [
+                "Equation Primitives Core",
+                "Equation Primitives Standard Library Integration"
+            ]
+        ),
+        .target(
+            name: "Equation Primitives Core",
+            dependencies: [
                 .product(name: "Property Primitives", package: "swift-property-primitives"),
                 .product(name: "Identity Primitives", package: "swift-identity-primitives"),
+            ]
+        ),
+        .target(
+            name: "Equation Primitives Standard Library Integration",
+            dependencies: [
+                "Equation Primitives Core"
             ]
         ),
     ],
