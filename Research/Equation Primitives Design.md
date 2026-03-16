@@ -6,7 +6,7 @@ title: Equation Primitives Design
 type: discovery
 version: 2.0.0
 date: 2026-01-22
-status: draft
+status: IN_PROGRESS
 package: swift-equation-primitives
 applies_to: [swift-equation-primitives, swift-hash-primitives, swift-comparison-primitives]
 ---
