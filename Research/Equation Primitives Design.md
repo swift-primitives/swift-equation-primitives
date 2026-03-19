@@ -4,9 +4,10 @@
 ---
 title: Equation Primitives Design
 type: discovery
-version: 2.0.0
+version: 2.1.0
 date: 2026-01-22
-status: IN_PROGRESS
+last_updated: 2026-03-18
+status: DECISION
 package: swift-equation-primitives
 applies_to: [swift-equation-primitives, swift-hash-primitives, swift-comparison-primitives]
 ---
