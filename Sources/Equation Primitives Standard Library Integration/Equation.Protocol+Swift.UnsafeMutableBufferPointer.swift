@@ -14,8 +14,8 @@ extension UnsafeMutableBufferPointer: Equation.`Protocol` {
     @inlinable
     @_disfavoredOverload
     public static func == (lhs: borrowing Self, rhs: borrowing Self) -> Bool {
-        let lhsCopy = copy lhs
-        let rhsCopy = copy rhs
+        let lhsCopy = unsafe copy lhs
+        let rhsCopy = unsafe copy rhs
         guard lhsCopy.count == rhsCopy.count else { return false }
         let lhsAddr = unsafe lhsCopy.baseAddress.map { Int(bitPattern: $0) }
         let rhsAddr = unsafe rhsCopy.baseAddress.map { Int(bitPattern: $0) }

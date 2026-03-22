@@ -14,8 +14,8 @@ extension UnsafeMutableRawPointer: Equation.`Protocol` {
     @inlinable
     @_disfavoredOverload
     public static func == (lhs: borrowing Self, rhs: borrowing Self) -> Bool {
-        let lhsCopy = copy lhs
-        let rhsCopy = copy rhs
+        let lhsCopy = unsafe copy lhs
+        let rhsCopy = unsafe copy rhs
         return Int(bitPattern: lhsCopy) == Int(bitPattern: rhsCopy)
     }
 }
