@@ -16,6 +16,14 @@ let package = Package(
             name: "Equation Primitives",
             targets: ["Equation Primitives"]
         ),
+        .library(
+            name: "Equation Primitives Core",
+            targets: ["Equation Primitives Core"]
+        ),
+        .library(
+            name: "Equation Primitives Standard Library Integration",
+            targets: ["Equation Primitives Standard Library Integration"]
+        ),
     ],
     dependencies: [
         .package(path: "../swift-property-primitives"),
