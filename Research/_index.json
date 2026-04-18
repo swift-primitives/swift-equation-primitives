@@ -1,0 +1,21 @@
+{
+  "$schema": "https://swift-institute.org/schemas/research-index-v1.json",
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-04-18",
+  "title": "Research Index",
+  "blurb": "",
+  "scope": "swift-equation-primitives (swift-primitives)",
+  "documents": [
+    {
+      "file": "Equation%20Primitives%20Design.md",
+      "displayName": "Equation Primitives Design.md",
+      "topic": "Design for equation, hash, and comparison primitives unification",
+      "date": "2026-01-22",
+      "status": "DRAFT",
+      "statusDetail": null,
+      "statusRaw": "DRAFT",
+      "tier": null,
+      "scope": null
+    }
+  ]
+}
