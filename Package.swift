@@ -27,7 +27,7 @@ let package = Package(
     ],
     dependencies: [
         .package(path: "../swift-property-primitives"),
-        .package(path: "../swift-identity-primitives"),
+        .package(path: "../swift-tagged-primitives"),
     ],
     targets: [
         .target(
@@ -41,7 +41,7 @@ let package = Package(
             name: "Equation Primitives Core",
             dependencies: [
                 .product(name: "Property Primitives", package: "swift-property-primitives"),
-                .product(name: "Identity Primitives", package: "swift-identity-primitives"),
+                .product(name: "Tagged Primitives", package: "swift-tagged-primitives"),
             ]
         ),
         .target(

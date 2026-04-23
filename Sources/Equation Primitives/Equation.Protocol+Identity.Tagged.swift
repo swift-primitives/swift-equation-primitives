@@ -1,7 +1,7 @@
 // Equation.Protocol+Identity.Tagged.swift
 // Equation.Protocol conformance for Tagged types.
 
-public import Identity_Primitives
+public import Tagged_Primitives
 
 extension Tagged: Equation.`Protocol` where Tag: ~Copyable, RawValue: ~Copyable & Equation.`Protocol` {
     /// Returns whether the left-hand side tagged value equals the right-hand side.
