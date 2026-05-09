@@ -1,0 +1,8 @@
+# .github/metadata.yaml
+# Triaged by AI-assisted bulk pass (2026-04-29).
+description: "Equation types for Swift."
+topics:
+  - primitives
+  - equation
+  - type-safety
+homepage: "https://swift-institute.org"
