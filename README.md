@@ -123,6 +123,12 @@ Pre-1.0. The protocol surface is intentionally small: one method (`==`), one def
 
 ---
 
+## Community
+
+<!-- BEGIN: discussion -->
+Discuss this package: [swift-institute/discussions/17](https://github.com/orgs/swift-institute/discussions/17)
+<!-- END: discussion -->
+
 ## License
 
 Apache 2.0. See [LICENSE.md](LICENSE.md).
