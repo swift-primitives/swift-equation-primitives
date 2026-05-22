@@ -17,6 +17,10 @@ let package = Package(
             targets: ["Equation Namespace"]
         ),
         .library(
+            name: "Equation Protocol Primitives",
+            targets: ["Equation Protocol Primitives"]
+        ),
+        .library(
             name: "Equation Primitives",
             targets: ["Equation Primitives"]
         ),
@@ -43,6 +47,12 @@ let package = Package(
             dependencies: []
         ),
         .target(
+            name: "Equation Protocol Primitives",
+            dependencies: [
+                "Equation Namespace",
+            ]
+        ),
+        .target(
             name: "Equation Primitives",
             dependencies: [
                 "Equation Primitives Core",
@@ -53,6 +63,7 @@ let package = Package(
             name: "Equation Primitives Core",
             dependencies: [
                 "Equation Namespace",
+                "Equation Protocol Primitives",
                 .product(name: "Property Primitives", package: "swift-property-primitives"),
                 .product(name: "Tagged Primitives", package: "swift-tagged-primitives"),
             ]
