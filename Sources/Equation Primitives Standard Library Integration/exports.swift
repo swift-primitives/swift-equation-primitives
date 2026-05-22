@@ -1,4 +1,4 @@
 // exports.swift
-// Re-exports Core for access to Equation types.
+// Re-exports the Equation protocol surface (transitively includes Equation_Namespace).
 
-@_exported import Equation_Primitives_Core
+@_exported public import Equation_Protocol_Primitives

@@ -12,26 +12,35 @@ let package = Package(
         .visionOS(.v26),
     ],
     products: [
+        // MARK: - Namespace
         .library(
             name: "Equation Namespace",
             targets: ["Equation Namespace"]
         ),
+
+        // MARK: - Sub-namespace targets
         .library(
             name: "Equation Protocol Primitives",
             targets: ["Equation Protocol Primitives"]
         ),
         .library(
-            name: "Equation Primitives",
-            targets: ["Equation Primitives"]
+            name: "Equation Tagged Primitives",
+            targets: ["Equation Tagged Primitives"]
         ),
-        .library(
-            name: "Equation Primitives Core",
-            targets: ["Equation Primitives Core"]
-        ),
+
+        // MARK: - StdLib Integration
         .library(
             name: "Equation Primitives Standard Library Integration",
             targets: ["Equation Primitives Standard Library Integration"]
         ),
+
+        // MARK: - Umbrella
+        .library(
+            name: "Equation Primitives",
+            targets: ["Equation Primitives"]
+        ),
+
+        // MARK: - Test Support
         .library(
             name: "Equation Primitives Test Support",
             targets: ["Equation Primitives Test Support"]
@@ -42,10 +51,13 @@ let package = Package(
         .package(url: "https://github.com/swift-primitives/swift-tagged-primitives.git", branch: "main"),
     ],
     targets: [
+        // MARK: - Namespace
         .target(
             name: "Equation Namespace",
             dependencies: []
         ),
+
+        // MARK: - Sub-namespace targets (per [MOD-031])
         .target(
             name: "Equation Protocol Primitives",
             dependencies: [
@@ -53,25 +65,30 @@ let package = Package(
             ]
         ),
         .target(
-            name: "Equation Primitives",
+            name: "Equation Tagged Primitives",
             dependencies: [
-                "Equation Primitives Core",
-                "Equation Primitives Standard Library Integration"
-            ]
-        ),
-        .target(
-            name: "Equation Primitives Core",
-            dependencies: [
-                "Equation Namespace",
                 "Equation Protocol Primitives",
-                .product(name: "Property Primitives", package: "swift-property-primitives"),
                 .product(name: "Tagged Primitives", package: "swift-tagged-primitives"),
             ]
         ),
+
+        // MARK: - StdLib Integration
         .target(
             name: "Equation Primitives Standard Library Integration",
             dependencies: [
-                "Equation Primitives Core"
+                "Equation Protocol Primitives",
+            ]
+        ),
+
+        // MARK: - Umbrella
+        .target(
+            name: "Equation Primitives",
+            dependencies: [
+                "Equation Namespace",
+                "Equation Protocol Primitives",
+                "Equation Tagged Primitives",
+                "Equation Primitives Standard Library Integration",
+                .product(name: "Property Primitives", package: "swift-property-primitives"),
             ]
         ),
 
