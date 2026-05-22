@@ -5,7 +5,7 @@
 // importing Equation_Primitives get the union plus Property_Primitives
 // (preserved as a convenience re-export from the pre-migration shape).
 
-@_exported public import Equation_Namespace
+@_exported public import Equation_Primitive
 @_exported public import Equation_Protocol_Primitives
 @_exported public import Equation_Tagged_Primitives
 @_exported public import Equation_Primitives_Standard_Library_Integration

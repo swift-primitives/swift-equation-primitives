@@ -6,7 +6,7 @@
 // is a typealias to Swift.Equatable; under Swift <6.4, it remains the fork.
 // See: swift-institute/Research/se-0499-implications-for-equation-hash-comparison-primitives.md
 
-public import Equation_Namespace
+public import Equation_Primitive
 
 #if swift(>=6.4)
 

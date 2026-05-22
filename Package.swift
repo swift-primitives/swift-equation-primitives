@@ -14,8 +14,8 @@ let package = Package(
     products: [
         // MARK: - Namespace
         .library(
-            name: "Equation Namespace",
-            targets: ["Equation Namespace"]
+            name: "Equation Primitive",
+            targets: ["Equation Primitive"]
         ),
 
         // MARK: - Sub-namespace targets
@@ -53,7 +53,7 @@ let package = Package(
     targets: [
         // MARK: - Namespace
         .target(
-            name: "Equation Namespace",
+            name: "Equation Primitive",
             dependencies: []
         ),
 
@@ -61,7 +61,7 @@ let package = Package(
         .target(
             name: "Equation Protocol Primitives",
             dependencies: [
-                "Equation Namespace",
+                "Equation Primitive",
             ]
         ),
         .target(
@@ -84,7 +84,7 @@ let package = Package(
         .target(
             name: "Equation Primitives",
             dependencies: [
-                "Equation Namespace",
+                "Equation Primitive",
                 "Equation Protocol Primitives",
                 "Equation Tagged Primitives",
                 "Equation Primitives Standard Library Integration",
