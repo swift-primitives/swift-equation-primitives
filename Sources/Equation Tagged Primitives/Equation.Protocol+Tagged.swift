@@ -4,7 +4,7 @@
 
     public import Tagged_Primitives
 
-    extension Tagged: Equation.`Protocol` where Tag: ~Copyable, Underlying: ~Copyable & Equation.`Protocol` {
+    extension Tagged: Equation.`Protocol` where Tag: ~Copyable & ~Escapable, Underlying: ~Copyable & Equation.`Protocol` {
         /// Returns whether the left-hand side tagged value equals the right-hand side.
         ///
         /// Compares the underlying values using `Equation.Protocol` semantics,
