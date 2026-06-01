@@ -27,4 +27,24 @@
         }
     }
 
+#else
+    // Swift 6.4+: `Equation.Protocol` is a typealias to `Swift.Equatable`. `Swift.Span`
+    // is `~Escapable` and is NOT stdlib-`Equatable`, so the institute supplies the
+    // conformance — a `@retroactive Swift.Equatable` conformance (the pre-6.4 fork
+    // branch above guarded this out, which dropped Span equality on 6.4+).
+    extension Span: @retroactive Swift.Equatable where Element: Equation.`Protocol` {
+        /// Returns whether two spans are element-wise equal (same count, all elements equal).
+        @inlinable
+        @_disfavoredOverload
+        public static func == (lhs: borrowing Self, rhs: borrowing Self) -> Bool {
+            guard lhs.count == rhs.count else { return false }
+            var index = 0
+            while index < lhs.count {
+                if !(lhs[index] == rhs[index]) { return false }
+                index += 1
+            }
+            return true
+        }
+    }
+
 #endif
