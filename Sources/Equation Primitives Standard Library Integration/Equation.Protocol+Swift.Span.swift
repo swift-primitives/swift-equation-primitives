@@ -2,7 +2,7 @@
     // Equation.Protocol+Swift.Span.swift
     // Conditional conformance for Span — element-wise equality.
 
-    extension Span: Equation.`Protocol` where Element: Equation.`Protocol` {
+    extension Span: Equation.`Protocol` where Element: Equation.`Protocol` & ~Copyable {
         /// Returns whether two spans are equal.
         ///
         /// Two spans are equal if they have the same count and all corresponding
@@ -32,7 +32,7 @@
     // is `~Escapable` and is NOT stdlib-`Equatable`, so the institute supplies the
     // conformance — a `@retroactive Swift.Equatable` conformance (the pre-6.4 fork
     // branch above guarded this out, which dropped Span equality on 6.4+).
-    extension Span: @retroactive Swift.Equatable where Element: Equation.`Protocol` {
+    extension Span: @retroactive Swift.Equatable where Element: Equation.`Protocol` & ~Copyable {
         /// Returns whether two spans are element-wise equal (same count, all elements equal).
         @inlinable
         @_disfavoredOverload
