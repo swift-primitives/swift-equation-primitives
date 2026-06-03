@@ -34,14 +34,10 @@ struct Test {
 
     // MARK: - ~Copyable conformance
 
-    @Suite("Edge Case")
-    struct EdgeCase {
+    @Suite
+    struct `Edge Case` {
         struct Token: ~Copyable, Equation.`Protocol` {
             let id: Int
-
-            static func == (lhs: borrowing Self, rhs: borrowing Self) -> Bool {
-                lhs.id == rhs.id
-            }
         }
 
         @Test
@@ -65,18 +61,30 @@ struct Test {
 
     @Suite("Integration")
     struct Integration {
-        enum UserTag {}
-        typealias UserID = Tagged<UserTag, Int>
+        enum User {}
 
         @Test
         func `Tagged values compare via Equation.Protocol`() {
-            let a: UserID = 42
-            let b: UserID = 42
-            let c: UserID = 99
+            let a: User.ID = 42
+            let b: User.ID = 42
+            let c: User.ID = 99
             #expect(a == b)
             #expect(a != c)
         }
     }
+
+    @Suite("Performance", .serialized)
+    struct Performance {}
+}
+
+extension Test.`Edge Case`.Token {
+    static func == (lhs: borrowing Self, rhs: borrowing Self) -> Bool {
+        lhs.id == rhs.id
+    }
+}
+
+extension Test.Integration.User {
+    typealias ID = Tagged<Self, Int>
 }
 
 // MARK: - Helpers
