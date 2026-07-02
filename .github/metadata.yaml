@@ -1,6 +1,6 @@
 # .github/metadata.yaml
 # Triaged by AI-assisted bulk pass (2026-04-29).
-description: "Equation types for Swift."
+description: "A move-only equality protocol with borrowing comparison for ~Copyable types in Swift."
 topics:
   - primitives
   - equation
